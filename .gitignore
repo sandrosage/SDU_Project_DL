@@ -2,6 +2,8 @@ lines (209 sloc)  3.97 KB
 
 # USER ADDED
 *.h5
+.idea/
+idea/
 # AUTO GENERATED
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,python,visualstudiocode,vim

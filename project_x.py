@@ -155,6 +155,7 @@ During the training process we are keeping track of the current model's accuracy
 The best model is being stored for future reference and replaced as necessary. 
 As a comparison metric we use the validation accuracy.
 """
+
 checkpoint_filepath = '/tmp/checkpoint'
 model_checkpoint_callback = callbacks.ModelCheckpoint(
     filepath=checkpoint_filepath,
@@ -169,7 +170,6 @@ model.load_weights(checkpoint_filepath) # load the best model into memory
 '''
 Visualization method for the results. Also prints the training and validation loss.
 '''
-
 
 def plot_graph_2(history):
     loss_train = history.history['train_loss']
@@ -204,7 +204,9 @@ def plot_graph_2(history):
 
     plt.show()
 
-
+'''
+Visualization method for comparing accuracies between training and validation.
+'''
 def plot_graph(history):
     loss_train = history.history['train_loss']
     loss_val = history.history['val_loss']
@@ -217,11 +219,10 @@ def plot_graph(history):
     plt.legend()
     plt.show()
 
-'''
-Visualization method for comparing accuracies between training and validation.
-'''
 
-
+"""
+Visualisation of the features extracted from the data as a feature map
+"""
 def plot_feature_map(rows, columns, x_test):
     activation_model = Model(inputs=model.input, outputs=model.layers[0].output)
     activations = activation_model.predict(x_test[1].reshape(1,28,28,1))
@@ -235,7 +236,9 @@ def plot_feature_map(rows, columns, x_test):
     plt.show()
 
 
-
+"""
+Visualization of kernels extracted from the specified layer of the neural network
+"""
 def get_kernels(layer_name, rows, columns):
     kernels = model.get_layer(name=layer_name).get_weights()[0][:,:,0, :]
     index = 0
@@ -248,6 +251,9 @@ def get_kernels(layer_name, rows, columns):
     plt.show()
 
 
+"""
+Final Prediciton of the model accuracy using the test data 
+"""
 
 def evaluate_model(x_train, y_train, x_test, y_test, model):
     model.predict(x_train)

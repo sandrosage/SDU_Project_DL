@@ -5,12 +5,24 @@ from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, AverageP
 from keras.models import Model
 from keras import Input
 from keras import regularizers
+from keras.saving.save import load_model
 from keras.utils.vis_utils import plot_model
 #import visualkeras 
 from keras.losses import BinaryCrossentropy
 from keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
 from tensorflow.python.keras.utils.version_utils import callbacks
+
+"""Saving the model into the file"""
+def save_model_to_file(model, filename):
+	model.save(filename)
+
+
+"""Loading the model from the file"""
+def load_model_from_file(filename):
+	return load_model(filename)
+
+
 
 '''generation of a tree directory and division of data into training, testing and validation with a ratio of 80%, 10% and 10%. 
 This way the biggest part is dedicated to training and the model is able to have the highest accuracy, this was confirmed on these following websites 
@@ -166,6 +178,7 @@ model_checkpoint_callback = callbacks.ModelCheckpoint(
 history = model.fit(train_generator, epochs=epochs, validation_data=validation_generator, validation_steps=800 ) #callbacks=model_checkpoint_callback)
 
 model.load_weights(checkpoint_filepath) # load the best model into memory
+save_model_to_file(model, "model.h5")
 
 '''
 Visualization method for the results. Also prints the training and validation loss.
@@ -264,6 +277,9 @@ def evaluate_model(x_train, y_train, x_test, y_test, model):
     pred_test= model.predict(x_test)
     score2 = model.evaluate(x_test, y_test)
     print('Accuracy on test data: {}% \n Error in test data: {}'.format(score[1], 1 - score [1]))
+
+
+
 
 
 get_kernels("conv2d_10", 5, 6)

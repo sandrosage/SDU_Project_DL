@@ -1,0 +1,27 @@
+adam
+input dropout = 0.1
+callbacks = True
+
+
+Epoch 1/10
+55/55 [==============================] - 60s 1s/step - loss: 2.2634 - accuracy: 0.5938 - val_loss: 1.1728 - val_accuracy: 0.5000
+Epoch 2/10
+55/55 [==============================] - 57s 1s/step - loss: 0.5305 - accuracy: 0.8653 - val_loss: 0.6158 - val_accuracy: 0.8818
+Epoch 3/10
+55/55 [==============================] - 60s 1s/step - loss: 0.4014 - accuracy: 0.9312 - val_loss: 0.4588 - val_accuracy: 0.9455
+Epoch 4/10
+55/55 [==============================] - 55s 1s/step - loss: 0.4161 - accuracy: 0.9148 - val_loss: 0.4575 - val_accuracy: 0.9364
+Epoch 5/10
+55/55 [==============================] - 60s 1s/step - loss: 0.3651 - accuracy: 0.9352 - val_loss: 0.4838 - val_accuracy: 0.9227
+Epoch 6/10
+55/55 [==============================] - 55s 1s/step - loss: 0.3604 - accuracy: 0.9415 - val_loss: 0.4844 - val_accuracy: 0.9091
+Epoch 7/10
+55/55 [==============================] - 57s 1s/step - loss: 0.3482 - accuracy: 0.9466 - val_loss: 0.4684 - val_accuracy: 0.9045
+Epoch 8/10
+55/55 [==============================] - 60s 1s/step - loss: 0.3390 - accuracy: 0.9489 - val_loss: 0.5174 - val_accuracy: 0.8864
+Epoch 9/10
+55/55 [==============================] - 55s 1s/step - loss: 0.3101 - accuracy: 0.9585 - val_loss: 3.7344 - val_accuracy: 0.5000
+Epoch 10/10
+55/55 [==============================] - 61s 1s/step - loss: 0.3221 - accuracy: 0.9545 - val_loss: 4.5186 - val_accuracy: 0.5000
+
+
